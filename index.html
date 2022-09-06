@@ -13,99 +13,11 @@
     <title>Word Sprint Tool</title>
 </head>
 <body>
+    <audio src="./567208__sergequadrado__announcement-sound.wav" id="alert"></audio>
     <!-- Timer Component -->
-    <div class="timer">
-        <span id="timer-icon" class="timer-part">
-            <i class="material-icons">timer</i>
-        </span>
-        <span class="timer-part timer-minutes">00</span>
-        <span class="timer-part">:</span>
-        <span class="timer-part timer-seconds">00</span>
-        <button class="timer-button timer-start">
-            <i class="material-icons">play_arrow</i>
-        </button>
-        <button class="timer-button timer-reset">
-            <i class="material-icons">refresh</i>
-        </button>
-    </div>
-    <!-- Rich Text Editor Component -->
+    <div class="timer"></div>
+    <!-- Text Editor Component -->
     <div class="container">
-        <div class="format-bar">
-            <!-- Heading Options -->
-            <select id="format-styles" class="adv-format-opt">
-                <option value="normal">Normal Text</option>
-                <option value="h1">Heading 1</option>
-                <option value="h2">Heading 2</option>
-                <option value="h3">Heading 3</option>
-                <option value="h4">Heading 4</option>
-            </select>
-            <!-- Font -->
-            <select id="font-name" class="adv-format-opt"></select>
-            <select id="font-size" class="adv-format-opt"></select>
-            <!-- Font Format -->
-            <button id="bold" class="format-button format">
-                <i class="material-icons">format_bold</i>
-            </button>
-            <button id="italic" class="format-button format">
-                <i class="material-icons">format_italic</i>
-            </button>
-            <button id="underline" class="format-button format">
-                <i class="material-icons">format_underline</i>
-            </button>
-            <button id="strikethrough" class="format-button format">
-                <i class="material-icons">strikethrough_s</i>
-            </button>
-            <button id="subscript" class="format-button script">
-                <i class="material-icons">subscript</i>
-            </button>
-            <button id="superscript" class="format-button script">
-                <i class="material-icons">superscript</i>
-            </button>
-            <!-- List Options -->
-            <button id="ordered-list" class="format-button list">
-                <i class="material-icons">format_list_numbered</i>
-            </button>
-            <button id="unordered-list" class="format-button list">
-                <i class="material-icons">format_list_bulleted</i>
-            </button>
-            <!-- Undo Button -->
-            <button id="undo" class="format-button">
-                <i class="material-icons">undo</i>
-            </button>
-            <!-- Redo Button -->
-            <button id="redo" class="format-button">
-                <i class="material-icons">redo</i>
-            </button>
-            <!-- Font Alignment -->
-            <button id="align-left" class="format-button align">
-                <i class="material-icons">format_align_left</i>
-            </button>
-            <button id="align-center" class="format-button align">
-                <i class="material-icons">format_align_center</i>
-            </button>
-            <button id="align-right" class="format-button align">
-                <i class="material-icons">format_align_right</i>
-            </button>
-            <button id="align-justify" class="format-button align">
-                <i class="material-icons">format_align_justify</i>
-            </button>
-            <!-- Indentation -->
-            <button id="indent-increase" class="format-button indent">
-                <i class="material-icons">format_indent_increase</i>
-            </button>
-            <button id="indent-decrease" class="format-button indent">
-                <i class="material-icons">format_indent_decrease</i>
-            </button>
-            <!-- Color -->
-            <div class="color-wrapper">
-                <input type="color" id="font-color" class="adv-format-opt">
-                <label for="font-color"><i class="material-icons">format_color_text</i></label>
-            </div>
-            <div class="color-wrapper">
-                <input type="color" id="hl-color" class="adv-format-opt">
-                <label for="hl-color"><i class="material-icons"></i></label>
-            </div>
-        </div>
         <div id="text-input" contenteditable="true">
 
         </div>
@@ -113,14 +25,15 @@
     <!-- Word Counter Component -->
     <div class="counter">
         <div>
-            <h5 id="word-count">0</h5>
-            <p>Words</p>
+            <h5 id="word-count" class="color-changeable">0</h5>
+            <p class="color-changeable">Words</p>
         </div>
         <div>
-            <h5 id="char-count">0</h5>
-            <p>Characters</p>
+            <h5 id="word-goal" class="color-changeable" contenteditable="true">0</h5>
+            <p class="color-changeable">Goal</p>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./Timer.js"></script>
 </body>
 </html>

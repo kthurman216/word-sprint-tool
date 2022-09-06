@@ -23,13 +23,13 @@ body {
 }
 
 .timer {
-    width: 40vmin;
+    width: 50vmin;
     transform: translate(-50%,0);
     left: 50%;
-    margin-top: 15px;
     position: fixed;
-    top: 15px;
+    top: 50px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 24px 36px;
@@ -59,9 +59,18 @@ body {
     cursor: pointer;
 }
 
+.timer-start {
+    background-color: #d7f2d0;
+}
+
+.timer-stop {
+    background-color: #f2d0d0;
+}
+
 .container {
     background-color: #fcf8ec;
     width: 90vmin;
+    height: 75vh;
     padding: 50px 30px;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -69,18 +78,24 @@ body {
     left: 50%;
     border-radius: 10px;
     box-shadow: 0 25px 50px #4562689a;
+    align-items: center;
 }
 
-.format-bar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+#text-input {
+    border: 1px solid #d0e8f2;
+    padding: 20px;
+    font-size: 24px;
+    height: 60vh;
+    text-indent: 1em;
+    overflow: auto;
+}
+
+#word-goal:focus {
+    outline: 0px solid transparent;
 }
 
 .material-icons {
-    font-size: 36px !important;
+    font-size: 40px !important;
 }
 
 button {
@@ -92,54 +107,6 @@ button {
     border: none;
     background-color: #fcf8ec;
     color: #456268;
-}
-
-select {
-    padding: 7px;
-    border: 1px solid #456268;
-    border-radius: 3px;
-}
-
-.format-bar label, .format-bar select {
-    font-family: 'Rubik', sans-serif;
-    font-size: 20px;
-}
-
-.color-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-input[type="color"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: transparent;
-    width: 36px;
-    height: 36px;
-    border: none;
-    cursor: pointer;
-}
-
-input[type="color"]::-webkit-color-swatch{
-    border-radius: 55%;
-    box-shadow: 0 0 0 2px #fcf8ec, 0 0 0 4px #456268;
-}
-
-input[type="color"]::-moz-color-swatch{
-    border-radius: 55%;
-    box-shadow: 0 0 0 2px #fcf8ec, 0 0 0 4px #456268;
-}
-
-#text-input {
-    margin-top: 10px;
-    border: 1px solid #d0e8f2;
-    padding: 20px;
-    font-size: 24px;
-    height: 50vh;
-    text-indent: 1em;
-    overflow: auto;
 }
 
 .counter {
@@ -167,6 +134,6 @@ input[type="color"]::-moz-color-swatch{
     font-size: 40px;
 }
 
-.active{
-    background-color: #d0e8f2;
+.achieved {
+    color: #fcc55f !important;
 }
