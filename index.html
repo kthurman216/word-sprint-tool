@@ -14,23 +14,39 @@
 </head>
 <body>
     <audio src="./567208__sergequadrado__announcement-sound.wav" id="alert"></audio>
-    <!-- Timer Component -->
-    <div class="timer"></div>
-    <!-- Text Editor Component -->
-    <div class="container">
-        <div id="text-input" contenteditable="true">
-
-        </div>
+    <div class="options container ">
+        <button id="close-window" title="Close Window"><i class="material-icons">close</i></button>
+        <h1>Word Sprint Tool</h1>
+        <p>
+            Set your time limit and word goal and get to writing!
+        </p>
+        <p>
+            Click the word goal to set a word count target, click the timer button to set your time limit
+            and get your creativity flowing!
+        </p>
+        
     </div>
-    <!-- Word Counter Component -->
-    <div class="counter">
-        <div>
-            <h5 id="word-count" class="color-changeable">0</h5>
-            <p class="color-changeable">Words</p>
+    <div class="main-wrapper hide">
+        <!-- Clear Text Button -->
+        <button id="clear-text" title="Clear Text"><i class="material-icons">delete_forever</i></button>
+       <!-- Timer Component -->
+        <div class="timer"></div>
+        <!-- Text Editor Component -->
+        <div class="container">
+            <div id="text-input" contenteditable="true">
+
+            </div>
         </div>
-        <div>
-            <h5 id="word-goal" class="color-changeable" contenteditable="true">0</h5>
-            <p class="color-changeable">Goal</p>
+        <!-- Word Counter Component -->
+        <div class="counter">
+            <div>
+                <h5 id="word-count" class="color-changeable">0</h5>
+                <p class="color-changeable">Words</p>
+            </div>
+            <div>
+                <h5 id="word-goal" class="color-changeable" contenteditable="true" title="Set Word Goal">0</h5>
+                <p class="color-changeable">Goal</p>
+            </div>
         </div>
     </div>
     <script type="module" src="./script.js"></script>

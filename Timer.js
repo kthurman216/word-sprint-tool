@@ -6,7 +6,7 @@ export default class Timer {
             minutes: root.querySelector(".timer-minutes"),
             seconds: root.querySelector(".timer-seconds"),
             controls: root.querySelector(".timer-control"),
-            reset: root.querySelector(".timer-reset")
+            reset: root.querySelector(".timer-reset"),
         };
 
         this.interval = null;
@@ -46,11 +46,15 @@ export default class Timer {
             this.elem.controls.innerHTML = `<span class="material-icons">play_arrow</span>`;
             this.elem.controls.classList.add("timer-start");
             this.elem.controls.classList.remove("timer-stop");
+            this.elem.controls.setAttribute('title', "Start Timer");
+
         }
         else {
             this.elem.controls.innerHTML = `<span class="material-icons">pause</span>`;
             this.elem.controls.classList.add("timer-stop");
             this.elem.controls.classList.remove("timer-start");
+            this.elem.controls.setAttribute('title', "Pause Timer");
+
         }
     }
 
@@ -87,10 +91,10 @@ export default class Timer {
             <span class="timer-part timer-minutes">00</span>
             <span class="timer-part">:</span>
             <span class="timer-part timer-seconds">00</span>
-            <button class="timer-button timer-control timer-start">
+            <button class="timer-button timer-control timer-start" title="Start Timer">
                 <i class="material-icons">play_arrow</i>
             </button>
-            <button class="timer-button timer-reset">
+            <button class="timer-button timer-reset" title="Set Timer">
                 <i class="material-icons">access_time</i>
             </button>
         `;

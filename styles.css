@@ -22,6 +22,10 @@ body {
     font-size: 16px;
 }
 
+.hide {
+    display: none !important;
+}
+
 .timer {
     width: 50vmin;
     transform: translate(-50%,0);
@@ -54,9 +58,12 @@ body {
     width: 50px;
     height: 50px;
     background-color: #d0e8f2;
+    color: #456268;
     margin-left: 16px;
+    border: none;
     border-radius: 25px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .timer-start {
@@ -81,6 +88,71 @@ body {
     align-items: center;
 }
 
+.options {
+    color: #456268;
+    font-size: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.options p{
+    margin: 25px;
+    font-size: 30px;
+}
+
+
+#close-window {
+    font-size: 40px;
+    font-family: 'Rubik', sans-serif;
+    background-color: #79a3b1;
+    padding: 6px;
+    width: 60px;
+    height: 60px;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    left: 45%;
+    top: -20%;
+}
+
+#close-window:hover, #clear-text:hover, .timer-button:hover {
+    transform: scale(1.1, 1.1);
+    color: #d7f2d0;
+    background-color: #456268;
+    cursor: pointer;
+}
+
+#clear-text {
+    font-size: 40px;
+    font-family: 'Rubik', sans-serif;
+    background-color: #79a3b1;
+    padding: 6px;
+    width: 60px;
+    height: 60px;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 15%;
+    right: 30%;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+input:focus {
+    border-bottom: 5px solid #d0e8f2;
+}
+
 #text-input {
     border: 1px solid #d0e8f2;
     padding: 20px;
@@ -90,23 +162,21 @@ body {
     overflow: auto;
 }
 
+#word-goal {
+    transition: 0.1s;
+}
+
+#word-goal:hover{
+    cursor: pointer;
+}
+
 #word-goal:focus {
     outline: 0px solid transparent;
+    border-bottom: 3px solid #d0e8f2;
 }
 
 .material-icons {
     font-size: 40px !important;
-}
-
-button {
-    height: 40px;
-    width: 40px;
-    display: grid;
-    place-items: center;
-    border-radius: 3px;
-    border: none;
-    background-color: #fcf8ec;
-    color: #456268;
 }
 
 .counter {
@@ -127,13 +197,30 @@ button {
 .counter p{
     color: #d0e8f2;
     font-size: 22px;
+    transition: 0.2;
 }
 
 .counter h5{
     color: #fcf8ec;
     font-size: 40px;
+    transition: 0.2s;
 }
 
 .achieved {
-    color: #fcc55f !important;
+    transform: scale(1.5, 1.5);
+    background-image: linear-gradient( 90deg,  rgba(255,61,89,1), rgb(255, 100, 61), #fcc55f, rgba(252,251,44,1), #fcc55f, rgb(255, 100, 61),  rgba(255,61,89,1));
+    background-size: 400%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: goal 7s infinite;
+}
+
+@keyframes goal {
+    0%{
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
 }
